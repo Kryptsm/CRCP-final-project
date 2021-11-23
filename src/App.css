@@ -11,14 +11,15 @@
 }
 
 html {
-  background-image: url('./images/bckgrnd.png');
-  background-size: cover;
+  background-color: rgb(51,65,57);
 }
 
 #root {
   background-image: url('./images/bckgrnd.png');
   background-size: cover;
   background-size: 1200px 675px;
+  background-repeat: no-repeat;
+  background-color: rgb(51,65,57);
 }
 
 .randomsButton {
