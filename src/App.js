@@ -126,7 +126,8 @@ export function initializeSounds(number) {
     soundsArray.push(
       new Howl({
         src: storedSounds[number],
-        rate: ((Math.random() * 5) + 1)
+        rate: ((Math.random() * 5) + 1),
+        volume: 0.2,
       })
     )
   }
@@ -137,7 +138,8 @@ function initializeSetSounds() {
     setSounds.push(
       new Howl({
         src: storedSounds[x],
-        rate: 1
+        rate: 1,
+        volume: 0.5,
       })
     )
   }
@@ -204,7 +206,7 @@ function toggleLight(number) {
       element.id = "white";
       element.src = white;
 
-      //soundsArray[number - 1].stop();
+      soundsArray[number - 1].stop();
     }
   }
 }
