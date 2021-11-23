@@ -1,0 +1,46 @@
+.grid {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(5, 1fr);
+  width: 500px;
+}
+
+.bulb {
+  width: 100px;
+  height: auto;
+}
+
+html {
+  background-image: url('./images/bckgrnd.png');
+  background-size: cover;
+}
+
+#root {
+  background-image: url('./images/bckgrnd.png');
+  background-size: cover;
+  background-size: 1200px 675px;
+}
+
+.randomsButton {
+  margin: 10px;
+}
+
+.appContainer {
+  margin-left: 54px;
+  margin-top: 7px;
+  height: 650px;
+}
+
+.theHex {
+  width: 500px;
+  margin-left: 50px;
+  vertical-align: top;
+}
+
+.theGame {
+  width: 500px;
+}
+
+.float-child {
+  float: left;
+}  
