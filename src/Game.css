@@ -24,12 +24,12 @@ body {
     font-size: 48px;
     font-weight: bold;
     line-height: 34px;
-    height: 136px;
     margin-right: -1px;
     margin-top: -1px;
     padding: 0;
     text-align: center;
-    width: 136px;
+    width: 140px;
+    height: 140px;
   }
   
   .square:focus {

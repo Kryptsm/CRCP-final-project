@@ -1,10 +1,3 @@
-.grid {
-  display: grid;
-  grid-gap: 0px;
-  grid-template-columns: repeat(5, 1fr);
-  width: 500px;
-}
-
 .bulb {
   width: 100px;
   height: auto;
@@ -37,8 +30,8 @@ html {
 }
 
 .theGame {
-  margin-top: 1px;
-  width: 500px;
+  margin-top: 0px;
+  width: 550px;
 }
 
 .float-child {
@@ -46,11 +39,11 @@ html {
 }  
 
 .justTheGame {
-  margin-left: 54px;
+  margin-left: 50px;
 }
 
 .randomClicksButton {
-  margin: 10px 10px 14px 37px;
+  margin: 10px 10px 7px 37px;
   border: 5px solid rgb(19,32,25);
   background-color: rgb(78, 98, 87);
   color: lime;
