@@ -116,10 +116,21 @@ function App() {
   );
 }
 
+
 //initializes the array of sounds to the sound number specified
 export function initializeSounds(number) {
   currentSoundNum = number;
+
   stopAllNoise();
+
+  var elementList = document.getElementsByClassName("square");
+  if(elementList){
+    var element = elementList[4];
+    if(element){
+      console.log(element.id);
+    }
+  }
+
   if (soundsArray.length > 0)
     soundsArray = [];
 
