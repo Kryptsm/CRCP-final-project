@@ -203,13 +203,13 @@ function toggleLight(number) {
       element.id="black";
       element.src = black;
 
-      soundsArray[number - 1].play();
+      soundsArray[number - 1].stop();
     }
     else if (element.id.includes("black")) {
       element.id = "white";
       element.src = white;
 
-      soundsArray[number - 1].stop();
+      soundsArray[number - 1].play();
     }
   }
 }
