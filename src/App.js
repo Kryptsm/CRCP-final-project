@@ -34,14 +34,12 @@ function App() {
 
   return (
     <div>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"/>
+      <button className="randomClicksButton center" onClick={() => handleRandomClicks()}>Toggle Automation</button>
+
       <div className="appContainer">
         <div className="float-container">
           <div className="float-child theGame">
-            <button className="randomClicksButton center" onClick={() => handleRandomClicks()}>Toggle Automation</button>
-            <div className="justTheGame">
-              <Game/>
-            </div>
+            <Game />
           </div>
           <div className="float-child theHex">
             <ul id="hexGrid">

@@ -27,32 +27,21 @@ html {
 }
 
 .appContainer {
+  margin-left: 54px;
+  margin-top: 7px;
   height: 650px;
 }
 
 .theHex {
   width: 500px;
-  margin-left: 110px;
+  margin-left: 50px;
   vertical-align: top;
 }
 
 .theGame {
-  margin-top: 1px;
   width: 500px;
 }
 
 .float-child {
   float: left;
 }  
-
-.justTheGame {
-  margin-left: 54px;
-}
-
-.randomClicksButton {
-  margin: 10px 10px 14px 37px;
-  font-family: "Audiowide", sans-serif;
-  border: 5px solid rgb(19,32,25);
-  background-color: rgb(78, 98, 87);
-  color: lime;
-}
