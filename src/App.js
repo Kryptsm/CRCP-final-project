@@ -14,10 +14,18 @@ import mallet from "./sounds/mallet.mp3";
 import rifle from "./sounds/rifle.mp3";
 import shout from "./sounds/shout.mp3";
 
+import blaster from "./sounds/AlienBlaster.mp3";
+import radio from "./sounds/AlienRadio.mp3";
+import ambient from "./sounds/AmbientSciFi.mp3";
+import borealis from "./sounds/Borealis.mp3";
+import mario from "./sounds/Mario.mp3";
+import organ from "./sounds/Organ.mp3";
+import R2D2 from "./sounds/R2D2.mp3";
+
 import black from "./images/buttonOff.png";
 import white from "./images/buttonOn.png";
 
-var storedSounds = [testSound, bubbles, magic, sleigh, mallet, rifle, shout, testSound, testSound];
+var storedSounds = [testSound, blaster, radio, ambient, borealis, mario, organ, R2D2, mallet];
 var turnOnArray = [[], [], [], [], [], [], [], [], []];
 var soundsArray = []
 var setSounds = []
@@ -27,6 +35,8 @@ var randomClicks = false;
 var randomInterval = 150;
 var theInterval;
 
+var currentSoundNum = 0;
+
 function App() {
   initializeRandoms();
   initializeSounds(0);
@@ -34,8 +44,6 @@ function App() {
 
   return (
     <div>
-      
-
       <div className="appContainer">
         <div className="float-container">
           <div className="float-child theGame">
@@ -114,25 +122,35 @@ function App() {
           </div>
         </div>
       </div>
-
-
     </div>
   );
 }
 
 //initializes the array of sounds to the sound number specified
 export function initializeSounds(number) {
+  currentSoundNum = number;
   if (soundsArray.length > 0)
     soundsArray = [];
 
   for (var x = 0; x < 7; x++) {
-    soundsArray.push(
-      new Howl({
-        src: storedSounds[number],
-        rate: ((Math.random() * 5) + 1),
-        volume: 0.2,
-      })
-    )
+    if(x === 4){
+      soundsArray.push(
+        new Howl({
+          src: storedSounds[number],
+          rate: ((Math.random() * 5) + 1),
+          volume: 1.0,
+        })
+      )
+    }
+    else{
+      soundsArray.push(
+        new Howl({
+          src: storedSounds[number],
+          rate: ((Math.random() * 5) + 1),
+          volume: 0.2,
+        })
+      )
+    }
   }
 }
 
@@ -168,7 +186,10 @@ function initializeRandoms() {
 //handles the random clicks button, setting an interval that clicks a random button in a set time
 function handleRandomClicks() {
   if (randomClicks) {
-    clearInterval(theInterval)
+    clearInterval(theInterval);
+    for(var x = 0; x < 7; x++){
+      soundsArray[x].stop();
+    }
   } else if (!randomClicks) {
     theInterval = setInterval(function () {
       lightButton(randomIntFromInterval(1, 7));
@@ -210,6 +231,11 @@ function toggleLight(number) {
       element.src = white;
 
       soundsArray[number - 1].play();
+      if(currentSoundNum === 4){
+        soundsArray[number - 1].fade(1, 0.0, 3000);
+      }
+      else
+        soundsArray[number - 1].fade(0.2, 0.0, 1000);
     }
   }
 }
