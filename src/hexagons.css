@@ -53,8 +53,8 @@
     left: -100%;
     right: -100%;
     width: auto;
-    height: 100%;
-    margin: 0 auto;
+    height: 90%;
+    margin: 6px auto;
     -webkit-transform: rotate3d(0,0,0,0deg);
         -ms-transform: rotate3d(0,0,0,0deg);
             transform: rotate3d(0,0,0,0deg);

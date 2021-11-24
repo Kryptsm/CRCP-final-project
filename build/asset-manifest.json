@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.f1b7f29f.chunk.css",
-    "main.js": "/static/js/main.eacf7ef8.chunk.js",
-    "main.js.map": "/static/js/main.eacf7ef8.chunk.js.map",
+    "main.css": "/static/css/main.f84520e5.chunk.css",
+    "main.js": "/static/js/main.dee78e5a.chunk.js",
+    "main.js.map": "/static/js/main.dee78e5a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.6311cffb.js",
     "runtime-main.js.map": "/static/js/runtime-main.6311cffb.js.map",
     "static/css/2.383c0125.chunk.css": "/static/css/2.383c0125.chunk.css",
@@ -12,39 +12,32 @@
     "static/js/3.b84625b7.chunk.js.map": "/static/js/3.b84625b7.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.383c0125.chunk.css.map": "/static/css/2.383c0125.chunk.css.map",
-    "static/css/main.f1b7f29f.chunk.css.map": "/static/css/main.f1b7f29f.chunk.css.map",
+    "static/css/main.f84520e5.chunk.css.map": "/static/css/main.f84520e5.chunk.css.map",
     "static/js/2.f650d97b.chunk.js.LICENSE.txt": "/static/js/2.f650d97b.chunk.js.LICENSE.txt",
     "static/media/AlienBlaster.6deedeac.mp3": "/static/media/AlienBlaster.6deedeac.mp3",
     "static/media/AlienRadio.ad48ac5e.mp3": "/static/media/AlienRadio.ad48ac5e.mp3",
     "static/media/AmbientSciFi.5f57a816.mp3": "/static/media/AmbientSciFi.5f57a816.mp3",
-    "static/media/Borealis.734400f2.mp3": "/static/media/Borealis.734400f2.mp3",
+    "static/media/Borealis.78e26469.mp3": "/static/media/Borealis.78e26469.mp3",
     "static/media/Mario.9e37a3c8.mp3": "/static/media/Mario.9e37a3c8.mp3",
     "static/media/Organ.d5ae198a.mp3": "/static/media/Organ.d5ae198a.mp3",
     "static/media/R2D2.21c271e3.mp3": "/static/media/R2D2.21c271e3.mp3",
     "static/media/App.css": "/static/media/bckgrnd.7ee310e6.png",
-    "static/media/brightbulb.d13ffde9.png": "/static/media/brightbulb.d13ffde9.png",
     "static/media/bubbles.670936f1.mp3": "/static/media/bubbles.670936f1.mp3",
     "static/media/buttonOff.04b5431a.png": "/static/media/buttonOff.04b5431a.png",
     "static/media/buttonOn.f77c943e.png": "/static/media/buttonOn.f77c943e.png",
-    "static/media/darkbulb.d29ae9dd.png": "/static/media/darkbulb.d29ae9dd.png",
     "static/media/elaine.0d1b9911.png": "/static/media/elaine.0d1b9911.png",
     "static/media/elaine2.a7180e14.png": "/static/media/elaine2.a7180e14.png",
     "static/media/george.24c07330.png": "/static/media/george.24c07330.png",
     "static/media/kramer.e3926b5e.png": "/static/media/kramer.e3926b5e.png",
     "static/media/magic.b3a3ab2f.mp3": "/static/media/magic.b3a3ab2f.mp3",
-    "static/media/mallet.d8471e16.mp3": "/static/media/mallet.d8471e16.mp3",
-    "static/media/rifle.31d358a4.mp3": "/static/media/rifle.31d358a4.mp3",
     "static/media/seinfeld3.a4b680fc.png": "/static/media/seinfeld3.a4b680fc.png",
-    "static/media/shout.cb2afb0e.mp3": "/static/media/shout.cb2afb0e.mp3",
-    "static/media/sleigh.ad4bf25f.mp3": "/static/media/sleigh.ad4bf25f.mp3",
-    "static/media/targetOff.e4805c19.png": "/static/media/targetOff.e4805c19.png",
-    "static/media/testsound.9ab7d691.mp3": "/static/media/testsound.9ab7d691.mp3"
+    "static/media/targetOff.e4805c19.png": "/static/media/targetOff.e4805c19.png"
   },
   "entrypoints": [
     "static/js/runtime-main.6311cffb.js",
     "static/css/2.383c0125.chunk.css",
     "static/js/2.f650d97b.chunk.js",
-    "static/css/main.f1b7f29f.chunk.css",
-    "static/js/main.eacf7ef8.chunk.js"
+    "static/css/main.f84520e5.chunk.css",
+    "static/js/main.dee78e5a.chunk.js"
   ]
 }
