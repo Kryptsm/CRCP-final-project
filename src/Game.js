@@ -1,7 +1,7 @@
 import React from 'react';
 import './Game.css';
 import './App.js';
-import { initializeSounds } from './App.js';
+import { initializeSounds, changeMiddle } from './App.js';
 
 import magicIcon from "./images/targetOff.png";
 import blasterIcon from "./images/boxesOff.png";
@@ -11,10 +11,10 @@ import borealisIcon from "./images/new-icons/kramer_off.png";
 import marioIcon from "./images/new-icons/happy_george_off.png";
 import organIcon from "./images/new-icons/angry_george_off.png";
 import R2D2Icon from "./images/new-icons/disgusted_elaine_off.png";
-import bubblesIcon from "./images/empty.png";
+import empty from "./images/empty.png";
 
-var imagesArray = [magicIcon, blasterIcon, radioIcon, ambientIcon,
-    borealisIcon, marioIcon, organIcon, R2D2Icon, bubblesIcon];
+var imagesArray = [blasterIcon, magicIcon, radioIcon, ambientIcon,
+    marioIcon, organIcon, R2D2Icon, borealisIcon, empty];
 
 function Square(props) {
     if (props.value !== null) {
@@ -34,10 +34,20 @@ function Square(props) {
 
 
 class Board extends React.Component {
+    componentDidUpdate(){
+        changeMiddle();
+        initializeSounds();
+    }
+
+    componentDidMount(){
+        changeMiddle();
+        initializeSounds();
+    }
+
     constructor(props) {
         super(props);
         this.state = {
-            squares: [[1, 2, 3], [4, 5, 6], [7, 8, null]],
+            squares: [[1, 2, 3], [4, null, 5], [6, 7, 8]],
             xIsNext: true,
             justClicked: 9,
         };
@@ -82,7 +92,7 @@ class Board extends React.Component {
             squares[nullY][nullX] = tempHolder;
             this.setState({
                 justClicked: temp[y][x] + 1,
-            }, initializeSounds(temp[y][x]))
+            })
         }
 
         this.setState({

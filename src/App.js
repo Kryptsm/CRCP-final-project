@@ -2,10 +2,10 @@ import './App.css';
 import './hexagons.css';
 import { Howl } from 'howler';
 import Game from './Game.js';
+import React,{Component} from 'react';
 
 import bubbles from "./sounds/bubbles.mp3";
 import magic from "./sounds/magic.mp3";
-
 import blaster from "./sounds/AlienBlaster.mp3";
 import radio from "./sounds/AlienRadio.mp3";
 import ambient from "./sounds/AmbientSciFi.mp3";
@@ -17,119 +17,149 @@ import R2D2 from "./sounds/R2D2.mp3";
 import black from "./images/buttonOff.png";
 import white from "./images/buttonOn.png";
 
-var storedSounds = [magic, blaster, radio, ambient, borealis, mario, organ, R2D2, bubbles];
+import magicOn from "./images/targetOn.png";
+import blasterOn from "./images/boxesOn.png";
+import radioOn from "./images/new-icons/jerry_on.png";
+import ambientOn from "./images/new-icons/sad_elaine_on.png";
+import borealisOn from "./images/new-icons/kramer_on.png";
+import marioOn from "./images/new-icons/happy_george_on.png";
+import organOn from "./images/new-icons/angry_george_on.png";
+import R2D2On from "./images/new-icons/disgusted_elaine_on.png";
+import empty from "./images/empty.png";
+
+var imagesOnArray = [blasterOn, magicOn, radioOn, ambientOn,
+  marioOn, organOn, R2D2On, borealisOn, empty];
+
+var storedSounds = [magic, blaster, radio, ambient, mario, organ, R2D2, bubbles, borealis];
 var turnOnArray = [[], [], [], [], [], [], [], [], []];
 var soundsArray = []
-var setSounds = []
 
 var randomClicks = false;
 var theInterval;
 
-var currentSoundNum = 0;
+var currentSoundNum = 4;
 
-function App() {
-  initializeRandoms();
-  initializeSounds(8);
-  initializeSetSounds();
-
-  return (
-    <div>
-      <div className="appContainer">
-        <div className="float-container">
-          <div className="float-child theGame">
-            <button className="randomClicksButton center" onClick={() => handleRandomClicks()}>Toggle Automation</button>
-            <div className="justTheGame">
-              <Game />
+export default class App extends Component {
+  componentDidMount(){
+    initializeRandoms();
+    initializeSounds();
+  }
+  render() {
+    return (
+      <div>
+        <div className="appContainer">
+          <div className="float-container">
+            <div className="float-child theGame">
+              <button className="randomClicksButton center" onClick={() => handleRandomClicks()}>Toggle Automation</button>
+              <div className="justTheGame">
+                <Game />
+              </div>
             </div>
-          </div>
-          <div className="float-child theHex">
-            <ul id="hexGrid">
-              <li className="hex">
-                <div className="hexIn">
-                  <div className="hexLink ">
-                    <img src={black} alt="lightbulb" id="black" className="bulb hidden" hidden />
+            <div className="float-child theHex">
+              <ul id="hexGrid">
+                <li className="hex">
+                  <div className="hexIn">
+                    <div className="hexLink ">
+                      <img src={black} alt="lightbulb" id="black" className="bulb hidden" hidden />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li className="hex">
-                <div className="hexIn">
-                  <div className="hexLink ">
-                    <img src={black} alt="lightbulb" id="black" className="bulb hidden" hidden />
+                </li>
+                <li className="hex">
+                  <div className="hexIn">
+                    <div className="hexLink ">
+                      <img src={black} alt="lightbulb" id="black" className="bulb hidden" hidden />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li className="hex">
-                <div className="hexIn">
-                  <div className="hexLink ">
-                    <img src={black} alt="lightbulb" id="black" className="bulb button-1" onClick={() => lightButton(1)} />
+                </li>
+                <li className="hex">
+                  <div className="hexIn">
+                    <div className="hexLink ">
+                      <img src={black} alt="lightbulb" id="black" className="bulb button-1" onClick={() => lightButton(1)} />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li className="hex">
-                <div className="hexIn">
-                  <div className="hexLink ">
-                    <img src={black} alt="lightbulb" id="black" className="bulb button-2" onClick={() => lightButton(2)} />
+                </li>
+                <li className="hex">
+                  <div className="hexIn">
+                    <div className="hexLink ">
+                      <img src={black} alt="lightbulb" id="black" className="bulb button-2" onClick={() => lightButton(2)} />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li className="hex">
-                <div className="hexIn">
-                  <div className="hexLink ">
-                    <img src={black} alt="lightbulb" id="black" className="bulb button-3" onClick={() => lightButton(3)} />
+                </li>
+                <li className="hex">
+                  <div className="hexIn">
+                    <div className="hexLink ">
+                      <img src={black} alt="lightbulb" id="black" className="bulb button-3" onClick={() => lightButton(3)} />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li className="hex">
-                <div className="hexIn">
-                  <div className="hexLink ">
-                    <img src={black} alt="lightbulb" id="black" className="bulb button-4" onClick={() => lightButton(4)} />
+                </li>
+                <li className="hex">
+                  <div className="hexIn">
+                    <div className="hexLink ">
+                      <img src={black} alt="lightbulb" id="black" className="bulb button-4" onClick={() => lightButton(4)} />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li className="hex">
-                <div className="hexIn">
-                  <div className="hexLink ">
-                    <img src={black} alt="lightbulb" id="black" className="bulb button-5" onClick={() => lightButton(5)} />
+                </li>
+                <li className="hex">
+                  <div className="hexIn">
+                    <div className="hexLink ">
+                      <img src={black} alt="lightbulb" id="black" className="bulb button-5" onClick={() => lightButton(5)} />
+                    </div>
                   </div>
-                </div>
-              </li>
+                </li>
 
-              <li className="hex">
-                <div className="hexIn">
-                  <div className="hexLink ">
-                    <img src={black} alt="lightbulb" id="black" className="bulb button-6" onClick={() => lightButton(6)} />
+                <li className="hex">
+                  <div className="hexIn">
+                    <div className="hexLink ">
+                      <img src={black} alt="lightbulb" id="black" className="bulb button-6" onClick={() => lightButton(6)} />
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li className="hex">
-                <div className="hexIn">
-                  <div className="hexLink ">
-                    <img src={black} alt="lightbulb" id="black" className="bulb button-7" onClick={() => lightButton(7)} />
+                </li>
+                <li className="hex">
+                  <div className="hexIn">
+                    <div className="hexLink ">
+                      <img src={black} alt="lightbulb" id="black" className="bulb button-7" onClick={() => lightButton(7)} />
+                    </div>
                   </div>
-                </div>
-              </li>
-            </ul>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+
 }
 
+export function changeMiddle(){
+  var element = document.getElementsByClassName("square");
+  var elementID = element[4].id;
+
+  if(elementID === "empty")
+    return;
+
+  element[4].src = imagesOnArray[elementID];
+}
 
 //initializes the array of sounds to the sound number specified
-export function initializeSounds(number) {
+export function initializeSounds() {
+  var element = document.getElementsByClassName("square")[4];
+  console.log(document.getElementsByClassName("square"));
+  var elementID = element.id;
+
+  var number = null;
+  if(elementID === "empty")
+    number = 8;
+  else
+    number = parseInt(elementID);
+
+  if(currentSoundNum === number){
+    return;
+  }
+
   currentSoundNum = number;
 
   stopAllNoise();
-
-  var elementList = document.getElementsByClassName("square");
-  if(elementList){
-    var element = elementList[4];
-    if(element){
-      console.log(element.id);
-    }
-  }
 
   if (soundsArray.length > 0)
     soundsArray = [];
@@ -159,18 +189,6 @@ export function initializeSounds(number) {
 function stopAllNoise() {
   for (var x = 0; x < soundsArray.length; x++) {
     soundsArray[x].stop();
-  }
-}
-
-function initializeSetSounds() {
-  for (var x = 0; x < 7; x++) {
-    setSounds.push(
-      new Howl({
-        src: storedSounds[x],
-        rate: 1,
-        volume: 0.5,
-      })
-    )
   }
 }
 
@@ -236,15 +254,15 @@ function toggleLight(number) {
       element.src = white;
 
       soundsArray[number - 1].play();
-      if (currentSoundNum === 4) {
+      if (currentSoundNum === 3) {
         soundsArray[number - 1].fade(1, 0.0, 500);
       }
-      else if(currentSoundNum === 2)
+      else if (currentSoundNum === 2)
         soundsArray[number - 1].fade(0.035, 0.0, 500);
+      else if(currentSoundNum === 4)
+        soundsArray[number - 1].fade(0.15, 0.0, 350);
       else
         soundsArray[number - 1].fade(0.2, 0.0, 500);
     }
   }
 }
-
-export default App;
